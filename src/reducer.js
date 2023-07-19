@@ -1,6 +1,6 @@
 let id = 0;
 
-function reducer(state = [], action) {
+export default function reducer(state = [], action) {
     // if (action.type === "ADD_TASK") {
     //     return [
     //         ...state,
@@ -18,13 +18,13 @@ function reducer(state = [], action) {
             return [
                 ...state,
                 {
-                    id: ++0,
+                    id: ++id,
                     type: action.payload.task,
                     completed: false
                 }
             ]
-        case "REMOVE TASK":
-            return state.filter(task.id !== action.payload.id);
+        case "REMOVE_TASK":
+            return state.filter(task => task.id !== action.payload.id);
 
         default:
             return state

@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './store';
+import {addTask, removeTask} from "./action";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+store.dispatch(addTask("Task 1"));
+
+console.log(store.getState(), "==== store");
+store.dispatch(removeTask(1));
+console.log(store.getState(), "==== store");
+
 root.render(
   <React.StrictMode>
     <App />

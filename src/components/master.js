@@ -3,7 +3,7 @@ import React from 'react'
 export default function Mastercomponent() {
 
     const name = () => {
-        let abc = "Bondeepa";
+        let abc = "Chandan";
         function userName() {
             return abc;
         }
@@ -41,7 +41,7 @@ export default function Mastercomponent() {
 
     const newEmployeeDetails = {
         ...employeeDetails,
-        name: "Bondeepa"
+        name: "RIshi"
     }
 
     console.log(newEmployeeDetails, "===== modified");
