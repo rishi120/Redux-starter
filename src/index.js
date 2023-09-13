@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './store';
-import {addTask, removeTask} from "./action";
+import store from "./store/configureStore";
+import { addTask, removeTask, completedTask } from "./store/task";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 store.dispatch(addTask("Task 1"));
+store.dispatch(addTask("Task 2"));
+store.dispatch(addTask("Task 3"));
 
 console.log(store.getState(), "==== store");
-store.dispatch(removeTask(1));
+store.dispatch(completedTask(3));
 console.log(store.getState(), "==== store");
+store.dispatch(removeTask(1));
 
 root.render(
   <React.StrictMode>
